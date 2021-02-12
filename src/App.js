@@ -1,12 +1,8 @@
 import React from 'react';
 import SongForm from './components/SongForm'
 import SongList from './components/SongList'
-import { useSelector } from 'react-redux';
 
-
-function App() {
-  const userSongList = useSelector(state => state.songs);
-  
+function App() { 
   return (
     <div className="App">
       <div>
@@ -21,7 +17,7 @@ function App() {
             </tr>
             </tbody>
           </table>
-        <SongList songs={userSongList}/>
+        <SongList />
       </div>
     </div>
   );

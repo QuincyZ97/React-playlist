@@ -1,10 +1,11 @@
 import SongItem from './SongItem'
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function songList(props) {
-    console.log(props.songs)
-
-    const SongDisplay = props.songs.map(song =>
+function SongList() {
+    const userSongList = useSelector(state => state.songs);
+    
+    const SongDisplay = userSongList.map(song =>
         <SongItem
             key={song.id}
             title={song.title}
@@ -12,7 +13,7 @@ function songList(props) {
             genre={song.genre}
             rating={song.rating}
         />)
-    
+        
     return (
         <table>
             <tbody>
@@ -22,4 +23,4 @@ function songList(props) {
     );
 }
   
-export default songList
+export default SongList
