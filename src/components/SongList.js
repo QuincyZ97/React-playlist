@@ -8,6 +8,7 @@ function SongList() {
     const SongDisplay = userSongList.map(song =>
         <SongItem
             key={song.id}
+            id={song.id}
             title={song.title}
             artist={song.artist}
             genre={song.genre}

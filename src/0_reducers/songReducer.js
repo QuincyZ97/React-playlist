@@ -14,6 +14,7 @@ const songReducer = (state = initialState, action) => {
             const newState = [...state, action.payload]
             return newState
         case "DELETE_SONG":
+            console.log(action.payload)
             return state;
       }
   }
