@@ -11,3 +11,9 @@ export const deleteSong = (songId) => {
         payload: songId
     }
 }
+
+export const deleteAll = () => {
+    return {
+        type: "DELETE_ALL"
+    }
+}

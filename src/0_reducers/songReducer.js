@@ -12,10 +12,14 @@ const songReducer = (state = initialState, action) => {
             return state;
         case "ADD_SONG":
             const newState = [...state, action.payload]
-            return newState
+            return newState;
         case "DELETE_SONG":
-            console.log(action.payload)
-            return state;
+            const removedItem = state.filter(item => { return item.id !== action.payload })
+            console.log(removedItem)
+            return removedItem;
+        case "DELETE_ALL":
+            const clearedState = []
+            return clearedState
       }
   }
 
