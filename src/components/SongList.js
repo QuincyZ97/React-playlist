@@ -1,8 +1,7 @@
 import SongItem from './SongItem'
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { deleteAll } from '../0_actions'
-import { useDispatch } from 'react-redux';
 
 function SongList() {
     const userSongList = useSelector(state => state.songs);

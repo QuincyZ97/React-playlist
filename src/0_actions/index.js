@@ -17,3 +17,10 @@ export const deleteAll = () => {
         type: "DELETE_ALL"
     }
 }
+
+export const sortList = (sortType) => {
+    return {
+        type: "SORT_LIST",
+        payload: sortType
+    }
+}
