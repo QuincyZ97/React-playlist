@@ -20,31 +20,19 @@ const songReducer = (state = initialState, action) => {
             const clearedState = []
             return clearedState
         case "SORT_LIST":
-
-            const getType = ( sortType ) => {
-                if (sortType === "title") {
-                    return function (a, b) {
-                        if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
-                        if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
-                        return 0;
-                    }
-                } else if (sortType === "artist") {
-                    return function (a, b) {
-                        if (a.artist.toLowerCase() < b.artist.toLowerCase()) return -1;
-                        if (a.artist.toLowerCase() > b.artist.toLowerCase()) return 1;
-                        return 0;
-                    }
-                } else {
-                    return function (a, b) {
-                        if (a.rating < b.rating) return 1;
-                        if (a.rating > b.rating) return -1;
-                        return 0;
-                    }
-                }
+            const getType = (sortType) => {
+                // SORT TITLE
+                if (sortType === "tA") { return function (a, b) { if (a.title.toLowerCase() < b.title.toLowerCase()) return -1; } }
+                else if (sortType === "tD") { return function (a, b) { if (a.title.toLowerCase() > b.title.toLowerCase()) return -1; } }
+                // SORT ARTIST
+                else if (sortType === "aA")  { return function (a, b) { if (a.artist.toLowerCase() < b.artist.toLowerCase()) return -1; } }
+                else if (sortType === "aD") { return function (a, b) { if (a.artist.toLowerCase() > b.artist.toLowerCase()) return -1; } }
+                // SORT RATING
+                else if (sortType === "rA") { return function (a, b) { if (a.rating < b.rating) return -1;}}
+                else if (sortType === "rD")   { return function (a, b) { if (a.rating > b.rating) return -1;}}
             }
         
-            const sortState = [...state].sort( getType(action.payload) );
-
+            const sortState = [...state].slice().sort( getType(action.payload) );
             return sortState
       }
   }
