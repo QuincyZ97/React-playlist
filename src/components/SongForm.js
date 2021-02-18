@@ -1,4 +1,5 @@
 import { addSong } from '../0_actions'
+import { deleteAll } from '../0_actions'
 import {useDispatch, useSelector} from 'react-redux';
 
 function SongForm() {
@@ -32,24 +33,23 @@ function SongForm() {
     
 // ################################################
     return (
-        <form onSubmit={(event) => handleSubmit(event)}> 
-            
-        <input id="title" name="title" type="text" placeholder="Song name" />
-            
-        <input id="artist" name="artist" type="text" placeholder="Artist name" />
+        <div className="input" >
 
-        <select id="genre" name="genre">
+        <form onSubmit={(event) => handleSubmit(event)}> 
+        <input className="input__field" id="title" name="title" type="text" placeholder="Song name" />
+        <input className="input__field" id="artist" name="artist" type="text" placeholder="Artist name" />
+        <select className="input__field" id="genre" name="genre">
             <option value="Rock">Rock</option>
             <option value="Rap">Rap</option>
             <option value="Pop">Pop</option>
             <option value="Other">Other</option>
         </select>
-
-        <input type="number" id="rating" name="rating" min="1" max="5" />
-
-        <input type="submit" value="Add song"/>
-                    
+        <input className="input__field" type="number" id="rating" name="rating" min="1" max="5" placeholder="1-5" />
+        <input className="input__btn" type="submit" value="Add song"/>
         </form>
+            
+        <button className="removeBtn" onClick={() => dispatch(deleteAll())}>Remove all</button>
+        </div>
     );
 }
   

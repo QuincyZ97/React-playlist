@@ -7,7 +7,8 @@ function SongItem(props) {
     
     return (
         <tr key={props.id}>
-            <td><button onClick={() => dispatch(deleteSong(props.id))}> X </button>{props.title}</td>
+            <button className="removeBtn--single" onClick={() => dispatch(deleteSong(props.id))}> X </button>
+            <td>{props.title}</td>
             <td>{props.artist}</td>
             <td>{props.genre}</td> 
             <td>{props.rating}</td>
