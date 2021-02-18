@@ -1,16 +1,16 @@
 # Requirements
-- ~~Display: title, artist, genre, rating~~
+~~- Display: title, artist, genre, rating~~
 
-- ~~Button: add song~~
+~~- Button: add song~~
 
-- ~~Overview my saved songs(playlist)~~
+~~- Overview my saved songs(playlist)~~
 
 # Extra 3 point requirements
-- ~~1P = Sort [a-z]/ [z-a] | Stars [1-5] [5-1]~~
+~~- 1P = Sort [a-z]/ [z-a] | Stars [1-5] [5-1]~~
 
-- ~~1P = Delete songs from state~~
+~~- 1P = Delete songs from state~~
 
-- ~~2P = Redux~~
+~~- 2P = Redux~~
 
 *Total Points = 4/3*
 
